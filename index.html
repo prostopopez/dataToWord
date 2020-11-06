@@ -12,11 +12,156 @@
 <form class="finalData" action='/finalData' method='POST'>
     <div class="field">
         <div class="label"><label for="cardNumber">Карта вызова №</label></div>
-        <input class="simpleInput" id="cardNumber" name='cardNumber' type='text' placeholder='Ввведите номер карты'>
+        <input class="simpleInput" id="cardNumber" name='cardNumber' type='text' placeholder='Ввведите номер карты...'>
     </div>
     <div class="field">
         <div class="label"><label for="paramedicName">Фельдшер по приёму вызова</label></div>
-        <input class='simpleInput' id='paramedicName' name='paramedicName' type='paramedicName' placeholder='Введите ФИО фельдшера'>
+        <input class='simpleInput' id='paramedicName' name='paramedicName' type='paramedicName'
+            placeholder='Введите ФИО фельдшера...'>
+    </div>
+    <fieldset>
+        <legend>Время (часы, минуты)</legend>
+        <div class="field">
+            <div class="label"><label for="callReceiveTime">Приём вызова</label></div>
+            <input class="simpleInput" id="callReceiveTime" name='callReceiveTime' type='text'
+                placeholder='Введите время приёма вызова...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="callTransferTime">Передача вызова пригаде</label></div>
+            <input class="simpleInput" id="callTransferTime" name='callTransferTime' type='text'
+                placeholder='Введите время передачи вызова...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="teamCallTime">Вызов бригады</label></div>
+            <input class="simpleInput" id="teamCallTime" name='teamCallTime' type='text'
+                placeholder='Введите время вызова бригады...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="arrivalTime">Прибытие на место вызова</label></div>
+            <input class="simpleInput" id="arrivalTime" name='arrivalTime' type='text'
+                placeholder='Введите время прибытия на место...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="transportStartTime">Начало транспортировки / убытие</label></div>
+            <input class="simpleInput" id="transportStartTime" name='transportStartTime' type='text'
+                placeholder='Введите время убытия...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="transportEndTime">Окончание траспортировки</label></div>
+            <input class="simpleInput" id="transportEndTime" name='transportEndTime' type='text'
+                placeholder='Введите время окончания траспортировки...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="callEndTime">Окончание вызова</label></div>
+            <input class="simpleInput" id="callEndTime" name='callEndTime' type='text'
+                placeholder='Введите время окончания вызова...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="isAirTransport">Авиатранспорт</label></div>
+            <input class="checkInput" id="isAirTransport" name='isAirTransport' type='checkbox'>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Откуда</legend>
+        <div class="field">
+            <div class="label"><label for="startCity">Населённый пункт</label></div>
+            <input class="simpleInput" id="startCity" name='startCity' type='text'
+                placeholder='Введите название населённого пункта...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="startHealthCareFacility">Учр-е здравоохранения, отделение</label></div>
+            <input class="simpleInput" id="startHealthCareFacility" name='startHealthCareFacility' type='text'
+                placeholder='Введите название учр-я, отделения ...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="startPhoneNumber">№ телефона</label></div>
+            <input class="simpleInput" id="startPhoneNumber" name='startPhoneNumber' type='text'
+                placeholder='Введите № телефона...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="startNameAndPost">ФИО, должность</label></div>
+            <input class="simpleInput" id="startNameAndPost" name='startNameAndPost' type='text'
+                placeholder='Введите ФИО и должность...'>
+        </div>
+    </fieldset>
+    <div class="field">
+        <div class="label"><label for="directionalDiagnosis">Направительный диагноз</label></div>
+        <textarea
+            rows="1"
+            class="textareaInput"
+            id="directionalDiagnosis"
+            name="directionalDiagnosis"
+            placeholder="Введите направительный диагноз..."
+            oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
+    </div>
+    <fieldset>
+        <legend>С кем согласовано место госпитализации при эвакуации</legend>
+        <div class="field">
+            <div class="label"><label for="evacuationAgreementCity">Населённый пункт</label></div>
+            <input class="simpleInput" id="evacuationAgreementCity" name='evacuationAgreementCity' type='text'
+                placeholder='Введите название населённого пункта...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="evacuationAgreementFacility">Учр-е здравоохранения, отделение</label></div>
+            <input class="simpleInput" id="evacuationAgreementFacility" name='evacuationAgreementFacility' type='text'
+                placeholder='Введите название учр-я, отделения ...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="evacuationAgreementPhoneNumber">№ телефона</label></div>
+            <input class="simpleInput" id="evacuationAgreementPhoneNumber" name='evacuationAgreementPhoneNumber'
+                type='text'
+                placeholder='Введите № телефона...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="evacuationAgreementNameAndPost">ФИО, должность</label></div>
+            <input class="simpleInput" id="evacuationAgreementNameAndPost" name='evacuationAgreementNameAndPost'
+                type='text'
+                placeholder='Введите ФИО и должность...'>
+        </div>
+    </fieldset>
+    <div class="rowFlex">
+        <fieldset>
+            <legend>Вызов</legend>
+            <div class="field">
+                <div class="label"><label for="primaryCall">первичный</label></div>
+                <input class="checkInput" id="primaryCall" name='primaryCall' type='checkbox'>
+            </div>
+            <div class="field">
+                <div class="label"><label for="repeatedCall">повторный</label></div>
+                <input class="checkInput" id="repeatedCall" name='repeatedCall' type='checkbox'>
+            </div>
+            <div class="field">
+                <div class="label"><label for="passingCall">попутный</label></div>
+                <input class="checkInput" id="passingCall" name='passingCall' type='checkbox'>
+            </div>
+            <div class="field">
+                <div class="label"><label for="anotherBrigadeCall">вызов другой бригады</label></div>
+                <input class="checkInput" id="anotherBrigadeCall" name='anotherBrigadeCall' type='checkbox'>
+            </div>
+            <div class="field">
+                <div class="label"><label for="otherCall">прочее</label></div>
+                <input class="checkInput" id="otherCall" name='otherCall' type='checkbox'>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Повод к вызову</legend>
+            <div class="field">
+                <div class="label"><label for="onSiteConsultCause">консультация на месте</label></div>
+                <input class="checkInput" id="onSiteConsultCause" name='onSiteConsultCause' type='checkbox'>
+            </div>
+            <div class="field">
+                <div class="label"><label for="evacuationCause">эвакуация</label></div>
+                <input class="checkInput" id="evacuationCause" name='evacuationCause' type='checkbox'>
+            </div>
+            <div class="field">
+                <div class="label"><label for="operationCause">операция</label></div>
+                <input class="checkInput" id="operationCause" name='operationCause' type='checkbox'>
+            </div>
+            <div class="field">
+                <div class="label"><label for="otherCause">прочее</label></div>
+                <input class="checkInput" id="otherCause" name='otherCause' type='checkbox'>
+            </div>
+        </fieldset>
     </div>
     <div class='buttons'>
         <button>создать</button>
