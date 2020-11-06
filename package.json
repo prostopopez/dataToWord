@@ -1,0 +1,20 @@
+{
+  "name": "vkDataToExcel",
+  "version": "1.0.0",
+  "main": "parser.js",
+  "repository": "https://github.com/prostopopez/vkDataToExcel.git",
+  "author": "prostopopez",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon static-file.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsdom": "^16.3.0",
+    "officegen": "^0.6.4",
+    "tempfile": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.7"
+  }
+}
