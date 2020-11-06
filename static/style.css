@@ -9,6 +9,7 @@ body {
 
 label,
 input,
+textarea,
 button {
     outline: 0;
     color: black;
@@ -70,6 +71,7 @@ button:active {
 }
 
 .textareaInput {
+    border: 1px solid transparent;
     overflow: hidden;
     resize: none;
     line-height: 20px;
@@ -77,6 +79,10 @@ button:active {
     padding: 10px;
     min-height: 40px;
     border-radius: 5px;
+}
+
+.textareaInput:focus {
+    border: 1px solid #3498db;
 }
 
 .finalData {
