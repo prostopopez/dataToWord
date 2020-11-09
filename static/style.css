@@ -1,16 +1,18 @@
+/* main styles */
 * {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
 body {
-    background: #feeae6;
+    background: #dee0fc;
 }
 
 label,
 input,
 textarea,
-button {
+button,
+select {
     outline: 0;
     color: black;
 }
@@ -20,8 +22,11 @@ textarea {
     font-size: 14px;
 }
 
+input[type="date"],
+input[type="datetime-local"],
 input[type="radio"],
-input[type="checkbox"] {
+input[type="checkbox"],
+select {
     cursor: pointer;
 }
 
@@ -53,6 +58,56 @@ button:active {
     box-shadow: 0 0 10px 0 darkred inset, 0 0 10px 4px darkred;
 }
 
+legend {
+    font-weight: bold;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset .field:last-child {
+    margin-bottom: 0;
+}
+
+/* containers */
+.finalData {
+    margin: 0 auto;
+    width: 98%;
+    max-width: 1500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.field {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.rowFlex {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.rowFlex fieldset:first-child {
+    margin-right: 20px;
+}
+
+/* basic inputs */
 .simpleInput {
     border: 1px solid transparent;
     min-width: 300px;
@@ -85,49 +140,32 @@ button:active {
     border: 1px solid #3498db;
 }
 
-.finalData {
-    margin: 0 auto;
-    width: 98%;
-    max-width: 1500px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
+.radioInput {
+    height: 25px;
+    width: 25px;
 }
 
-.rowFlex {
-    display: flex;
+.selectInput {
+    min-width: 322px;
+    height: 42px;
 }
 
-.rowFlex fieldset:first-child {
-    margin-right: 20px;
-}
-
-fieldset {
+/* specific styles*/
+.radioFlex {
     margin-bottom: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
 }
 
-fieldset .field:last-child {
+.radioFlex h3 {
+    margin-right: 20px;
+    width: 150px;
+}
+
+.radioFlex .field {
+    margin-right: 20px;
     margin-bottom: 0;
 }
 
-legend {
-    font-weight: bold;
-}
-
-.field {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.label {
-    width: 150px;
-    margin-right: 20px;
+.radioFlex .label {
+    margin-right: 0;
+    width: initial;
 }
