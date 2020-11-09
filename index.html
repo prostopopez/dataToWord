@@ -22,8 +22,8 @@
                 placeholder='Ввведите номер карты...'>
         </div>
         <div class="field">
-            <div class="label"><label for="paramedicName">Фельдшер по приёму вызова</label></div>
-            <input class='simpleInput' id='paramedicName' name='paramedicName' type='text'
+            <div class="label"><label for="paramedicOnCall">Фельдшер по приёму вызова</label></div>
+            <input class='simpleInput' id='paramedicOnCall' name='paramedicOnCall' type='text'
                 placeholder='Введите ФИО фельдшера...'>
         </div>
     </fieldset>
@@ -240,8 +240,8 @@
     <fieldset>
         <legend>Результаты</legend>
         <div class="field">
-            <div class="label"><label for="tourResult">Результат выезда</label></div>
-            <input class="simpleInput" id="tourResult" name='tourResult' type='text'
+            <div class="label"><label for="driveResult">Результат выезда</label></div>
+            <input class="simpleInput" id="driveResult" name='driveResult' type='text'
                 placeholder='Введите результат выезда...'>
         </div>
         <div class="field">
@@ -252,17 +252,64 @@
     </fieldset>
     <fieldset>
         <legend>Бригада</legend>
-        <div class="field">
+        <div class="field brigadeDoctorField">
             <div class="label"><label for="brigadeDoctor">Врач бригады</label></div>
             <select class="simpleInput selectInput" id="brigadeDoctor" name="brigadeDoctors[]">
                 <option value='gulyaevDN'>Гуляев Д.Н.</option>
                 <option value='tretyakovPV'>Третьяков П.В.</option>
                 <option value='krutskikhLV'>Крутских Л.В.</option>
             </select>
+            <button class="changeSelectorType" type="button">+</button>
+        </div>
+        <div class="field additionalDoctor">
+            <div class="label"><label for="additionalDoctor">Врач бригады</label></div>
+            <input class="simpleInput" id="additionalDoctor" name='additionalDoctor'
+                type='text' placeholder='Введите ФИО доктора...'>
+            <button class="changeSelectorType" type="button">-</button>
+        </div>
+        <div class="field">
+            <div class="label"><label for="paramedicInBrigade">Фельдшер</label></div>
+            <input class="simpleInput" id="paramedicInBrigade" name='paramedicInBrigade'
+                type='text' placeholder='Введите ФИО фельдшера...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="nurseInBrigade">Медсестра</label></div>
+            <input class="simpleInput" id="nurseInBrigade" name='nurseInBrigade'
+                type='text' placeholder='Введите ФИО медсестры...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="driverInBrigade">Водитель</label></div>
+            <input class="simpleInput" id="driverInBrigade" name='driverInBrigade'
+                type='text' placeholder='Введите ФИО водителя...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="driveDistance">Километраж выезда</label></div>
+            <input class="simpleInput" id="driveDistance" name='driveDistance'
+                type='number' placeholder='Введите километраж...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="complains">Жалобы</label></div>
+            <textarea
+                rows="1"
+                class="textareaInput"
+                id="complains"
+                name="complains"
+                placeholder="Введите жалобы..."
+                oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
+        </div>
+        <div class="field">
+            <div class="label"><label for="anamnesis">Анамнез</label></div>
+            <textarea
+                rows="1"
+                class="textareaInput"
+                id="anamnesis"
+                name="anamnesis"
+                placeholder="Введите сведения об истории болезни..."
+                oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
         </div>
     </fieldset>
     <div class='buttons'>
-        <button>создать</button>
+        <button type="submit">создать</button>
     </div>
 </form>
 <script type="text/javascript">
@@ -290,6 +337,26 @@
         } else if (type === 'passport') {
             number.value = num.substring(0, 4) + ' ' + num.substring(4, 9);
         }
+    }
+
+    /* selector type changer */
+    let isSelect = true;
+    let brigadeDoctor = document.querySelector('.brigadeDoctorField');
+    let additionalDoctor = document.querySelector('.additionalDoctor');
+    let buttons = document.querySelectorAll('.changeSelectorType');
+
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+            if (isSelect) {
+                brigadeDoctor.style.display = 'none';
+                additionalDoctor.style.display = 'flex';
+                isSelect = false;
+            } else {
+                brigadeDoctor.style.display = 'flex';
+                additionalDoctor.style.display = 'none';
+                isSelect = true;
+            }
+        });
     }
 </script>
 </body>

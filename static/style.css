@@ -87,6 +87,7 @@ fieldset .field:last-child {
 }
 
 .field {
+    position: relative;
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
@@ -169,4 +170,34 @@ fieldset .field:last-child {
 .radioFlex .label {
     margin-right: 0;
     width: initial;
+}
+
+.additionalDoctor {
+    display: none;
+}
+
+.brigadeDoctorField .selectInput,
+.additionalDoctor input{
+    min-width: 280px;
+    border-radius: 5px 0 0 5px;
+}
+
+.additionalDoctor input {
+    min-width: 258px;
+}
+
+.changeSelectorType {
+    padding: 0;
+    border-radius: 0 5px 5px 0;
+    border: 0;
+    width: 42px;
+    height: 42px;
+}
+
+.changeSelectorType:hover {
+    box-shadow: 0 0 5px 0 #3498db inset, 0 0 5px 1px #3498db;
+}
+
+.changeSelectorType:active {
+    box-shadow: 0 0 5px 0 darkred inset, 0 0 5px 1px darkred;
 }
