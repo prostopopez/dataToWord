@@ -14,19 +14,19 @@
         <legend>Основная информация</legend>
         <div class="field">
             <div class="label"><label for="mainDate">Дата</label></div>
-            <input class="simpleInput" id="mainDate" name='mainDate' type='date'>
+            <input class="simpleInput" id="mainDate" name='mainDate' type='date' max="9999-12-31">
         </div>
         <div class="field">
             <div class="label"><label for="cardNumber">Карта вызова №</label></div>
-            <input class="simpleInput" id="cardNumber" name='cardNumber' type='text'
+            <input class="simpleInput" id="cardNumber" name='cardNumber' type='number'
                 placeholder='Ввведите номер карты...'>
         </div>
         <div class="field">
             <div class="label"><label for="paramedicName">Фельдшер по приёму вызова</label></div>
             <input class='simpleInput' id='paramedicName' name='paramedicName' type='text'
                 placeholder='Введите ФИО фельдшера...'>
+        </div>
     </fieldset>
-    </div>
     <fieldset>
         <legend>Время (часы, минуты)</legend>
         <div class="field">
@@ -110,7 +110,7 @@
         <div class="field">
             <div class="label"><label for="evacuationAgreementFacility">Учр-е здравоохранения, отделение</label></div>
             <input class="simpleInput" id="evacuationAgreementFacility" name='evacuationAgreementFacility' type='text'
-                placeholder='Введите название учр-я, отделения ...'>
+                placeholder='Введите название учр-я, отделения...'>
         </div>
         <div class="field">
             <div class="label"><label for="evacuationAgreementPhoneNumber">№ телефона</label></div>
@@ -193,20 +193,103 @@
             <input class="simpleInput" id="insuranceCompany" name='insuranceCompany' type='text'
                 placeholder='Ввведите название страховой компании...'>
         </div>
+        <div class="field">
+            <div class="label"><label for="insurancePolicy">Полис</label></div>
+            <input class="simpleInput" id="insurancePolicy" name='insurancePolicy'
+                type='text' placeholder='Введите № полиса...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="passport">Паспорт</label></div>
+            <input class="simpleInput" id="passport" name='passport'
+                type='text' placeholder='Введите № паспорта...'>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>О диагнозе</legend>
+        <div class="field">
+            <div class="label"><label for="mainDiagnosis">Основной диагноз</label></div>
+            <textarea
+                rows="1"
+                class="textareaInput"
+                id="mainDiagnosis"
+                name="mainDiagnosis"
+                placeholder="Введите основной диагноз..."
+                oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
+        </div>
+        <div class="field">
+            <div class="label"><label for="complications">Осложнения</label></div>
+            <textarea
+                rows="1"
+                class="textareaInput"
+                id="complications"
+                name="complications"
+                placeholder="Введите осложнения..."
+                oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
+        </div>
+        <div class="field">
+            <div class="label"><label for="accompanying">Сопутствующие</label></div>
+            <textarea
+                rows="1"
+                class="textareaInput"
+                id="accompanying"
+                name="accompanying"
+                placeholder="Введите сопутствующие..."
+                oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Результаты</legend>
+        <div class="field">
+            <div class="label"><label for="tourResult">Результат выезда</label></div>
+            <input class="simpleInput" id="tourResult" name='tourResult' type='text'
+                placeholder='Введите результат выезда...'>
+        </div>
+        <div class="field">
+            <div class="label"><label for="hospitalizationPlace">Место госпитализации</label></div>
+            <input class="simpleInput" id="hospitalizationPlace" name='hospitalizationPlace' type='text'
+                placeholder='Введите название места госпитализации...'>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Бригада</legend>
+        <div class="field">
+            <div class="label"><label for="brigadeDoctor">Врач бригады</label></div>
+            <select class="simpleInput selectInput" id="brigadeDoctor" name="brigadeDoctors[]">
+                <option value='gulyaevDN'>Гуляев Д.Н.</option>
+                <option value='tretyakovPV'>Третьяков П.В.</option>
+                <option value='krutskikhLV'>Крутских Л.В.</option>
+            </select>
+        </div>
     </fieldset>
     <div class='buttons'>
         <button>создать</button>
     </div>
 </form>
 <script type="text/javascript">
-    function phoneMask(tel) {
-        let num = tel.value.replace(/\D/g, '');
-        tel.value = num.substring(0, 1) + '-(' + num.substring(1, 4) + ')-' + num.substring(4, 7) + '-' + num.substring(7, 9) + '-' + num.substring(9, 11);
-    }
-
+    /* tel formatter */
     let tels = document.querySelectorAll('input[type="tel"]');
     for (let i = 0; i < tels.length; i++) {
-        tels[i].addEventListener('keyup', e => phoneMask(tels[i]));
+        tels[i].addEventListener('keydown', e => inputMask(tels[i], 'tel'));
+    }
+
+    /* insurancePolicy formatter */
+    let insurancePolicy = document.querySelector('#insurancePolicy');
+    insurancePolicy.addEventListener('keydown', e => inputMask(insurancePolicy, 'insurance'));
+
+    /* passport formatter */
+    let passport = document.querySelector('#passport');
+    passport.addEventListener('keydown', e => inputMask(passport, 'passport'));
+
+    function inputMask(number, type) {
+        let num = number.value.replace(/\D/g, '');
+
+        if (type === 'tel') {
+            number.value = num.substring(0, 1) + '-(' + num.substring(1, 4) + ')-' + num.substring(4, 7) + '-' + num.substring(7, 9) + '-' + num.substring(9, 10);
+        } else if (type === 'insurance') {
+            number.value = num.substring(0, 4) + ' ' + num.substring(4, 8) + ' ' + num.substring(8, 12) + ' ' + num.substring(12, 15);
+        } else if (type === 'passport') {
+            number.value = num.substring(0, 4) + ' ' + num.substring(4, 9);
+        }
     }
 </script>
 </body>

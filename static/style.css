@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #dee0fc;
+    background-color: #e7fcf3;
 }
 
 label,
@@ -67,6 +67,7 @@ fieldset {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    background: #e3fcff;
 }
 
 fieldset .field:last-child {
@@ -109,7 +110,7 @@ fieldset .field:last-child {
 
 /* basic inputs */
 .simpleInput {
-    border: 1px solid transparent;
+    border: 1px solid black;
     min-width: 300px;
     padding: 0 10px;
     height: 40px;
@@ -126,7 +127,7 @@ fieldset .field:last-child {
 }
 
 .textareaInput {
-    border: 1px solid transparent;
+    border: 1px solid black;
     overflow: hidden;
     resize: none;
     line-height: 20px;
