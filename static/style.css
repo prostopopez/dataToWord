@@ -2,6 +2,7 @@
 * {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    transition: all 0.3s ease-in-out;
 }
 
 body {
@@ -177,7 +178,7 @@ fieldset .field:last-child {
 }
 
 .brigadeDoctorField .selectInput,
-.additionalDoctor input{
+.additionalDoctor input {
     min-width: 280px;
     border-radius: 5px 0 0 5px;
 }
