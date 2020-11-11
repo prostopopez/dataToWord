@@ -67,24 +67,10 @@ app.post('/finalData', parseData, (req, res) => {
         brigadeDoctor, additionalDoctor, paramedicInBrigade, nurseInBrigade, driverInBrigade, driveDistance, complains, anamnesis
     } = data;
 
-    // Проверка на заполнение
-    function testIfUndefined(element) {
-        if (element == 'undefined') {
-            return '';
-        }
-        return element;
-    }
-
-    for (let dataElement in data) {
-        if (data.hasOwnProperty(dataElement)) {
-            testIfUndefined(dataElement);
-        }
-    }
-
     // Форматирование дат
     [callReceiveTime, callTransferTime, teamCallTime, arrivalTime, transportStartTime, transportEndTime, callEndTime] = [callReceiveTime, callTransferTime, teamCallTime, arrivalTime, transportStartTime, transportEndTime, callEndTime].map(date => {
-        if (date == 'undefined') {
-            return 'aa';
+        if (date === '') {
+            return '';
         } else {
             return date.split(/\r?\n/)[0].split(/[-T]+/)[2] + '.' +
                 date.split(/\r?\n/)[0].split(/[-T]+/)[1] + '.' +
@@ -93,10 +79,11 @@ app.post('/finalData', parseData, (req, res) => {
         }
     });
 
-    birthDate = birthDate.split(/\r?\n/)[0].split(/[-]+/)[2] + '.' +
-        birthDate.split(/\r?\n/)[0].split(/[-]+/)[1] + '.' +
-        birthDate.split(/\r?\n/)[0].split(/[-]+/)[0];
-
+    if (birthDate !== '') {
+        birthDate = birthDate.split(/\r?\n/)[0].split(/[-]+/)[2] + '.' +
+            birthDate.split(/\r?\n/)[0].split(/[-]+/)[1] + '.' +
+            birthDate.split(/\r?\n/)[0].split(/[-]+/)[0];
+    }
 
     // Создание Word файла
     let tempFilePath = tempfile('.docx');
@@ -123,8 +110,7 @@ app.post('/finalData', parseData, (req, res) => {
         [`Прием вызова`, `Передача вызова бригаде`, `Выезд бригады`, `Прибытие на место вызова`,
             `Начало транспортировки / убытие`, `Окончание транспортировки`, `Окончание вызова`, `Авиатранспорт`],
         [`${callReceiveTime}`, `${callTransferTime}`, `${teamCallTime}`, `${arrivalTime}`, `${transportStartTime}`,
-            `${transportEndTime}`, `${callEndTime}`, `${isAirTransport}`],
-
+            `${transportEndTime}`, `${callEndTime}`, `${isAirTransport}`]
     ]
     let tableStyle = {
         borders: true,
