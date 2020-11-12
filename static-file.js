@@ -85,7 +85,7 @@ app.post('/finalData', parseData, (req, res) => {
             birthDate.split(/\r?\n/)[0].split(/[-]+/)[0];
     }
 
-    // Форматирование чекбокса
+    // Форматирование чекбоксов
     function isChecked(isChecked) {
         if (isChecked) {
             return { val: `☒`, opts: { align: 'center', textAlignment: 'top', sz: 24, fontFamily: "Times New Roman" } }
@@ -311,6 +311,7 @@ app.post('/finalData', parseData, (req, res) => {
             path: path.resolve(__dirname, 'static/img/printingImage.png'),
             lopt: { align: 'right' }
         },
+        { type: "linebreak" },
         {
             type: "table",
             val: table1,
