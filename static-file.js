@@ -9,7 +9,7 @@ let docx = officegen({
     keywords: 'Reports',
     orientation: 'portrait',
     description: 'A Report Description',
-    pageMargins: { top: 100, left: 400, bottom: 100, right: 400 }
+    pageMargins: {top: 100, left: 400, bottom: 100, right: 400}
 });
 
 // Express-приложение
@@ -18,7 +18,7 @@ let app = express();
 app.use("/static", express.static('./static/'));
 // Маршрут для главной страницы
 app.get('/', function (req, res) {
-    res.sendFile('index.html', { root: __dirname });
+    res.sendFile('index.html', {root: __dirname});
 });
 
 // Парсер
@@ -88,9 +88,9 @@ app.post('/finalData', parseData, (req, res) => {
     // Форматирование чекбоксов
     function isChecked(isChecked) {
         if (isChecked) {
-            return { val: `☒`, opts: { align: 'center', textAlignment: 'top', sz: 24, fontFamily: "Times New Roman" } }
+            return {val: `☒`, opts: {align: 'center', textAlignment: 'top', sz: 24, fontFamily: "Times New Roman"}};
         } else {
-            return { val: `☐`, opts: { align: 'center', textAlignment: 'top', sz: 24, fontFamily: "Times New Roman" } }
+            return {val: `☐`, opts: {align: 'center', textAlignment: 'top', sz: 24, fontFamily: "Times New Roman"}};
         }
     }
 
@@ -118,7 +118,7 @@ app.post('/finalData', parseData, (req, res) => {
         [`${callReceiveTime}`, `${callTransferTime}`, `${teamCallTime}`, `${arrivalTime}`, `${transportStartTime}`,
             `${transportEndTime}`, `${callEndTime}`, isChecked(isAirTransport === 'on')
         ]
-    ]
+    ];
     let table1Style = {
         borders: true,
         tableColWidth: 4261,
@@ -127,7 +127,7 @@ app.post('/finalData', parseData, (req, res) => {
         tableColor: "ada",
         tableAlign: "left",
         tableFontFamily: "Times New Roman"
-    }
+    };
     let table2 = [
         [{
             val: "II. Откуда:",
@@ -141,7 +141,7 @@ app.post('/finalData', parseData, (req, res) => {
         }],
         [`Населенный пункт`, `Учр-е здравоохранения, отделение`, `№ телефона`, `ФИО, должность`],
         [`${startCity}`, `${startHealthCareFacility}`, `${startPhoneNumber}`, `${startNameAndPost}`]
-    ]
+    ];
     let table2Style = {
         borders: true,
         tableColWidth: 8522,
@@ -150,7 +150,7 @@ app.post('/finalData', parseData, (req, res) => {
         tableColor: "ada",
         tableAlign: "left",
         tableFontFamily: "Times New Roman"
-    }
+    };
     let table3 = [
         [{
             val: "III. С кем согласовано место госпитализации при эвакуации:",
@@ -164,7 +164,7 @@ app.post('/finalData', parseData, (req, res) => {
         }],
         [`Населенный пункт`, `Учр-е здравоохранения, отделение`, `№ телефона`, `ФИО, должность`],
         [`${evacuationAgreementCity}`, `${evacuationAgreementFacility}`, `${evacuationAgreementPhoneNumber}`, `${evacuationAgreementNameAndPost}`]
-    ]
+    ];
     let table4 = [
         [
             {
@@ -176,18 +176,11 @@ app.post('/finalData', parseData, (req, res) => {
                 }
             },
             {
-                val: `первичный`,
-                opts: {
-                    sz: 24,
-                    fontFamily: "Times New Roman",
-                }
-            },
-            {
                 val: `${isChecked(callType === 'primaryCall').val}`,
                 opts: `${isChecked(callType === 'primaryCall').opt}`
             },
             {
-                val: `повторный`,
+                val: `первичный`,
                 opts: {
                     sz: 24,
                     fontFamily: "Times New Roman",
@@ -198,7 +191,7 @@ app.post('/finalData', parseData, (req, res) => {
                 opts: `${isChecked(callType === 'repeatedCall').opt}`
             },
             {
-                val: `попутный`,
+                val: `повторный`,
                 opts: {
                     sz: 24,
                     fontFamily: "Times New Roman",
@@ -209,7 +202,7 @@ app.post('/finalData', parseData, (req, res) => {
                 opts: `${isChecked(callType === 'passingCall').opt}`
             },
             {
-                val: `вызов другой бригады`,
+                val: `попутный`,
                 opts: {
                     sz: 24,
                     fontFamily: "Times New Roman",
@@ -220,7 +213,7 @@ app.post('/finalData', parseData, (req, res) => {
                 opts: `${isChecked(callType === 'anotherBrigadeCall').opt}`
             },
             {
-                val: `прочее`,
+                val: `вызов другой бригады`,
                 opts: {
                     sz: 24,
                     fontFamily: "Times New Roman",
@@ -230,8 +223,15 @@ app.post('/finalData', parseData, (req, res) => {
                 val: `${isChecked(callType === 'otherCall').val}`,
                 opts: `${isChecked(callType === 'otherCall').opt}`
             },
+            {
+                val: `прочее`,
+                opts: {
+                    sz: 24,
+                    fontFamily: "Times New Roman",
+                }
+            },
         ]
-    ]
+    ];
     let table4Style = {
         borders: false,
         tableSize: 24,
@@ -241,7 +241,7 @@ app.post('/finalData', parseData, (req, res) => {
         align: 'left',
         textAlignment: 'top',
         tableFontFamily: "Times New Roman"
-    }
+    };
     let table5 = [
         [
             {
@@ -253,18 +253,11 @@ app.post('/finalData', parseData, (req, res) => {
                 }
             },
             {
-                val: `консультация на месте`,
-                opts: {
-                    sz: 24,
-                    fontFamily: "Times New Roman",
-                }
-            },
-            {
                 val: `${isChecked(callCause === 'onSiteConsultCause').val}`,
                 opts: `${isChecked(callCause === 'onSiteConsultCause').opt}`
             },
             {
-                val: `эвакуация`,
+                val: `консультация на месте`,
                 opts: {
                     sz: 24,
                     fontFamily: "Times New Roman",
@@ -275,7 +268,7 @@ app.post('/finalData', parseData, (req, res) => {
                 opts: `${isChecked(callCause === 'evacuationCause').opt}`
             },
             {
-                val: `операция`,
+                val: `эвакуация`,
                 opts: {
                     sz: 24,
                     fontFamily: "Times New Roman",
@@ -286,7 +279,7 @@ app.post('/finalData', parseData, (req, res) => {
                 opts: `${isChecked(callCause === 'operationCause').opt}`
             },
             {
-                val: `прочее`,
+                val: `операция`,
                 opts: {
                     sz: 24,
                     fontFamily: "Times New Roman",
@@ -296,59 +289,66 @@ app.post('/finalData', parseData, (req, res) => {
                 val: `${isChecked(callCause === 'otherCause').val}`,
                 opts: `${isChecked(callCause === 'otherCause').opt}`
             },
+            {
+                val: `прочее`,
+                opts: {
+                    sz: 24,
+                    fontFamily: "Times New Roman",
+                }
+            },
         ]
-    ]
+    ];
 
     let finalData = [
         {
             type: "text",
             val: 'Нижнетагильский филиал',
-            lopt: { align: 'center' },
-            opt: { font_size: 16, bold: true, font_face: 'Times New Roman' }
+            lopt: {align: 'center'},
+            opt: {font_size: 16, bold: true, font_face: 'Times New Roman'}
         },
         {
             type: "image",
             path: path.resolve(__dirname, 'static/img/printingImage.png'),
-            lopt: { align: 'right' }
+            lopt: {align: 'right'}
         },
-        { type: "linebreak" },
+        {type: "linebreak"},
         {
             type: "table",
             val: table1,
             opt: table1Style
         },
-        { type: 'linebreak' },
+        {type: 'linebreak'},
         {
             type: "table",
             val: table2,
             opt: table2Style
         },
-        { type: 'linebreak' },
+        {type: 'linebreak'},
         {
             type: "text",
             val: `НАПРАВИТЕЛЬНЫЙ ДИАГНОЗ: ${directionalDiagnosis}`,
-            lopt: { align: 'left' },
-            opt: { font_size: 11, bold: true, font_face: 'Times New Roman', underline: true }
+            lopt: {align: 'left'},
+            opt: {font_size: 11, bold: true, font_face: 'Times New Roman', underline: true}
         },
-        { type: 'linebreak' },
+        {type: 'linebreak'},
         {
             type: "table",
             val: table3,
             opt: table2Style
         },
-        { type: 'linebreak' },
+        {type: 'linebreak'},
         {
             type: "table",
             val: table4,
             opt: table4Style
         },
-        { type: 'linebreak' },
+        {type: 'linebreak'},
         {
             type: "table",
             val: table5,
             opt: table4Style
         }
-    ]
+    ];
     docx.createByJson(finalData);
 
     // Завершение

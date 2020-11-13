@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="static/style.css" />
+    <link rel="stylesheet" type="text/css" href="static/style.css"/>
 </head>
 <body>
 <form class="finalData" action='/finalData' method='POST'>
@@ -19,12 +19,12 @@
         <div class="field">
             <div class="label"><label for="cardNumber">Карта вызова №</label></div>
             <input class="simpleInput" id="cardNumber" name='cardNumber' type='number'
-                placeholder='Ввведите номер карты...'>
+                   placeholder='Ввведите номер карты...'>
         </div>
         <div class="field">
             <div class="label"><label for="paramedicOnCall">Фельдшер по приёму вызова</label></div>
             <input class='simpleInput' id='paramedicOnCall' name='paramedicOnCall' type='text'
-                placeholder='Введите ФИО фельдшера...'>
+                   placeholder='Введите ФИО фельдшера...'>
         </div>
     </fieldset>
     <fieldset>
@@ -32,17 +32,17 @@
         <div class="field">
             <div class="label"><label for="callReceiveTime">Приём вызова</label></div>
             <input class="simpleInput" id="callReceiveTime" name='callReceiveTime' type='datetime-local'
-                max='2020-12-31T23:59'>
+                   max='2020-12-31T23:59'>
         </div>
         <div class="field">
             <div class="label"><label for="callTransferTime">Передача вызова пригаде</label></div>
             <input class="simpleInput" id="callTransferTime" name='callTransferTime' type='datetime-local'
-                max='9999-12-31T23:59'>
+                   max='9999-12-31T23:59'>
         </div>
         <div class="field">
             <div class="label"><label for="teamCallTime">Вызов бригады</label></div>
             <input class="simpleInput" id="teamCallTime" name='teamCallTime' type='datetime-local'
-                max='9999-12-31T23:59'>
+                   max='9999-12-31T23:59'>
         </div>
         <div class="field">
             <div class="label"><label for="arrivalTime">Прибытие на место вызова</label></div>
@@ -51,12 +51,12 @@
         <div class="field">
             <div class="label"><label for="transportStartTime">Начало транспортировки / убытие</label></div>
             <input class="simpleInput" id="transportStartTime" name='transportStartTime' type='datetime-local'
-                max='9999-12-31T23:59'>
+                   max='9999-12-31T23:59'>
         </div>
         <div class="field">
             <div class="label"><label for="transportEndTime">Окончание траспортировки</label></div>
             <input class="simpleInput" id="transportEndTime" name='transportEndTime' type='datetime-local'
-                max='9999-12-31T23:59'>
+                   max='9999-12-31T23:59'>
         </div>
         <div class="field">
             <div class="label"><label for="callEndTime">Окончание вызова</label></div>
@@ -72,32 +72,32 @@
         <div class="field">
             <div class="label"><label for="startCity">Населённый пункт</label></div>
             <input class="simpleInput" id="startCity" name='startCity' type='text'
-                placeholder='Введите название населённого пункта...'>
+                   placeholder='Введите название населённого пункта...'>
         </div>
         <div class="field">
             <div class="label"><label for="startHealthCareFacility">Учр-е здравоохранения, отделение</label></div>
             <input class="simpleInput" id="startHealthCareFacility" name='startHealthCareFacility' type='text'
-                placeholder='Введите название учр-я, отделения...'>
+                   placeholder='Введите название учр-я, отделения...'>
         </div>
         <div class="field">
             <div class="label"><label for="startPhoneNumber">№ телефона</label></div>
             <input class="simpleInput" id="startPhoneNumber" name='startPhoneNumber' type='tel'
-                placeholder='Введите номер телефона...'>
+                   placeholder='Введите номер телефона...'>
         </div>
         <div class="field">
             <div class="label"><label for="startNameAndPost">ФИО, должность</label></div>
             <input class="simpleInput" id="startNameAndPost" name='startNameAndPost' type='text'
-                placeholder='Введите ФИО и должность...'>
+                   placeholder='Введите ФИО и должность...'>
         </div>
         <div class="field">
             <div class="label"><label for="directionalDiagnosis">Направительный диагноз</label></div>
             <textarea
-                rows="1"
-                class="textareaInput"
-                id="directionalDiagnosis"
-                name="directionalDiagnosis"
-                placeholder="Введите направительный диагноз..."
-                oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
+                    rows="1"
+                    class="textareaInput"
+                    id="directionalDiagnosis"
+                    name="directionalDiagnosis"
+                    placeholder="Введите направительный диагноз..."
+                    oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
         </div>
     </fieldset>
     <fieldset>
@@ -105,23 +105,23 @@
         <div class="field">
             <div class="label"><label for="evacuationAgreementCity">Населённый пункт</label></div>
             <input class="simpleInput" id="evacuationAgreementCity" name='evacuationAgreementCity' type='text'
-                placeholder='Введите название населённого пункта...'>
+                   placeholder='Введите название населённого пункта...'>
         </div>
         <div class="field">
             <div class="label"><label for="evacuationAgreementFacility">Учр-е здравоохранения, отделение</label></div>
             <input class="simpleInput" id="evacuationAgreementFacility" name='evacuationAgreementFacility' type='text'
-                placeholder='Введите название учр-я, отделения...'>
+                   placeholder='Введите название учр-я, отделения...'>
         </div>
         <div class="field">
             <div class="label"><label for="evacuationAgreementPhoneNumber">№ телефона</label></div>
             <input class="simpleInput" id="evacuationAgreementPhoneNumber" name='evacuationAgreementPhoneNumber'
-                type='tel' placeholder='Введите № телефона...'>
+                   type='tel' placeholder='Введите № телефона...'>
         </div>
         <div class="field">
             <div class="label"><label for="evacuationAgreementNameAndPost">ФИО, должность</label></div>
             <input class="simpleInput" id="evacuationAgreementNameAndPost" name='evacuationAgreementNameAndPost'
-                type='text'
-                placeholder='Введите ФИО и должность...'>
+                   type='text'
+                   placeholder='Введите ФИО и должность...'>
         </div>
     </fieldset>
     <fieldset>
@@ -151,17 +151,17 @@
         <div class="field">
             <div class="label"><label for="name">Имя</label></div>
             <input class="simpleInput" id="name" name='name' type='text'
-                placeholder='Введите имя...'>
+                   placeholder='Введите имя...'>
         </div>
         <div class="field">
             <div class="label"><label for="surname">Фамилия</label></div>
             <input class="simpleInput" id="surname" name='surname' type='text'
-                placeholder='Введите фамилию...'>
+                   placeholder='Введите фамилию...'>
         </div>
         <div class="field">
             <div class="label"><label for="patronymic">Отчество</label></div>
             <input class="simpleInput" id="patronymic" name='patronymic' type='text'
-                placeholder='Введите отчество...'>
+                   placeholder='Введите отчество...'>
         </div>
         <div class="rowFlex radioFlex">
             <h3>Пол:</h3>
@@ -181,27 +181,27 @@
         <div class="field">
             <div class="label"><label for="regPlace">Место регистрации</label></div>
             <input class="simpleInput" id="regPlace" name='regPlace' type='text'
-                placeholder='Ввведите место регистрации...'>
+                   placeholder='Ввведите место регистрации...'>
         </div>
         <div class="field">
             <div class="label"><label for="jobPlace">Место работы</label></div>
             <input class="simpleInput" id="jobPlace" name='jobPlace' type='text'
-                placeholder='Ввведите место работы...'>
+                   placeholder='Ввведите место работы...'>
         </div>
         <div class="field">
             <div class="label"><label for="insuranceCompany">Страховая компания</label></div>
             <input class="simpleInput" id="insuranceCompany" name='insuranceCompany' type='text'
-                placeholder='Ввведите название страховой компании...'>
+                   placeholder='Ввведите название страховой компании...'>
         </div>
         <div class="field">
             <div class="label"><label for="insurancePolicy">Полис</label></div>
             <input class="simpleInput" id="insurancePolicy" name='insurancePolicy'
-                type='text' placeholder='Введите № полиса...'>
+                   type='text' placeholder='Введите № полиса...'>
         </div>
         <div class="field">
             <div class="label"><label for="passport">Паспорт</label></div>
             <input class="simpleInput" id="passport" name='passport'
-                type='text' placeholder='Введите № паспорта...'>
+                   type='text' placeholder='Введите № паспорта...'>
         </div>
     </fieldset>
     <fieldset>
@@ -209,32 +209,32 @@
         <div class="field">
             <div class="label"><label for="mainDiagnosis">Основной диагноз</label></div>
             <textarea
-                rows="1"
-                class="textareaInput"
-                id="mainDiagnosis"
-                name="mainDiagnosis"
-                placeholder="Введите основной диагноз..."
-                oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
+                    rows="1"
+                    class="textareaInput"
+                    id="mainDiagnosis"
+                    name="mainDiagnosis"
+                    placeholder="Введите основной диагноз..."
+                    oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
         </div>
         <div class="field">
             <div class="label"><label for="complications">Осложнения</label></div>
             <textarea
-                rows="1"
-                class="textareaInput"
-                id="complications"
-                name="complications"
-                placeholder="Введите осложнения..."
-                oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
+                    rows="1"
+                    class="textareaInput"
+                    id="complications"
+                    name="complications"
+                    placeholder="Введите осложнения..."
+                    oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
         </div>
         <div class="field">
             <div class="label"><label for="accompanying">Сопутствующие</label></div>
             <textarea
-                rows="1"
-                class="textareaInput"
-                id="accompanying"
-                name="accompanying"
-                placeholder="Введите сопутствующие..."
-                oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
+                    rows="1"
+                    class="textareaInput"
+                    id="accompanying"
+                    name="accompanying"
+                    placeholder="Введите сопутствующие..."
+                    oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
         </div>
     </fieldset>
     <fieldset>
@@ -242,73 +242,98 @@
         <div class="field">
             <div class="label"><label for="driveResult">Результат выезда</label></div>
             <input class="simpleInput" id="driveResult" name='driveResult' type='text'
-                placeholder='Введите результат выезда...'>
+                   placeholder='Введите результат выезда...'>
         </div>
         <div class="field">
             <div class="label"><label for="hospitalizationPlace">Место госпитализации</label></div>
             <input class="simpleInput" id="hospitalizationPlace" name='hospitalizationPlace' type='text'
-                placeholder='Введите название места госпитализации...'>
+                   placeholder='Введите название места госпитализации...'>
         </div>
     </fieldset>
     <fieldset>
         <legend>Бригада</legend>
-        <div class="field brigadeDoctorField">
+        <div class="field writableField n1">
             <div class="label"><label for="brigadeDoctor">Врач бригады</label></div>
-            <select class="simpleInput selectInput" id="brigadeDoctor" name="brigadeDoctors[]">
+            <select class="simpleInput selectInput" id="brigadeDoctor" name="brigadeDoctor">
                 <option value='gulyaevDN'>Гуляев Д.Н.</option>
                 <option value='tretyakovPV'>Третьяков П.В.</option>
                 <option value='krutskikhLV'>Крутских Л.В.</option>
             </select>
             <button class="changeSelectorType" type="button">+</button>
         </div>
-        <div class="field additionalDoctor">
+        <div class="field writableTarget">
             <div class="label"><label for="additionalDoctor">Врач бригады</label></div>
             <input class="simpleInput" id="additionalDoctor" name='additionalDoctor'
-                type='text' placeholder='Введите ФИО доктора...'>
+                   type='text' placeholder='Введите ФИО доктора...'>
             <button class="changeSelectorType" type="button">-</button>
         </div>
         <div class="field">
             <div class="label"><label for="paramedicInBrigade">Фельдшер</label></div>
             <input class="simpleInput" id="paramedicInBrigade" name='paramedicInBrigade'
-                type='text' placeholder='Введите ФИО фельдшера...'>
+                   type='text' placeholder='Введите ФИО фельдшера...'>
         </div>
         <div class="field">
             <div class="label"><label for="nurseInBrigade">Медсестра</label></div>
             <input class="simpleInput" id="nurseInBrigade" name='nurseInBrigade'
-                type='text' placeholder='Введите ФИО медсестры...'>
+                   type='text' placeholder='Введите ФИО медсестры...'>
         </div>
         <div class="field">
             <div class="label"><label for="driverInBrigade">Водитель</label></div>
             <input class="simpleInput" id="driverInBrigade" name='driverInBrigade'
-                type='text' placeholder='Введите ФИО водителя...'>
+                   type='text' placeholder='Введите ФИО водителя...'>
         </div>
         <div class="field">
             <div class="label"><label for="driveDistance">Километраж выезда</label></div>
             <input class="simpleInput" id="driveDistance" name='driveDistance'
-                type='number' placeholder='Введите километраж...'>
+                   type='number' placeholder='Введите километраж...'>
         </div>
         <div class="field">
             <div class="label"><label for="complains">Жалобы</label></div>
             <textarea
-                rows="1"
-                class="textareaInput"
-                id="complains"
-                name="complains"
-                placeholder="Введите жалобы..."
-                oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
+                    rows="1"
+                    class="textareaInput"
+                    id="complains"
+                    name="complains"
+                    placeholder="Введите жалобы..."
+                    oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
         </div>
         <div class="field">
             <div class="label"><label for="anamnesis">Анамнез</label></div>
             <textarea
-                rows="1"
-                class="textareaInput"
-                id="anamnesis"
-                name="anamnesis"
-                placeholder="Введите сведения об истории болезни..."
-                oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
+                    rows="1"
+                    class="textareaInput"
+                    id="anamnesis"
+                    name="anamnesis"
+                    placeholder="Введите сведения об истории болезни..."
+                    oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
         </div>
     </fieldset>
-    <div class='buttons'>
+    <fieldset>
+        <legend>ОБЪЕКТИВНЫЕ ДАННЫЕ:</legend>
+        <div class="field writableField n2">
+            <div class="label"><label for="patientCondition">СОСТОЯНИЕ</label></div>
+            <select class="simpleInput selectInput" id="patientCondition" name="patientCondition">
+                <option value='okState'>относительно удовлетворительное</option>
+                <option value='midState'>средней тяжести</option>
+                <option value='heavyState'>тяжёлое</option>
+                <option value='extremeState'>крайне тяжёлое</option>
+                <option value='terminalState'>терминальное</option>
+            </select>
+            <button class="changeSelectorType" type="button">+</button>
+        </div>
+        <div class="field writableTarget">
+            <div class="label"><label for="additionalCondition">СОСТОЯНИЕ</label></div>
+            <input class="simpleInput" id="additionalCondition" name='additionalCondition'
+                   type='text' placeholder='Введите состояние...'>
+            <button class="changeSelectorType" type="button">-</button>
+        </div>
+        <div class="field">
+            <div class="label"><label for="some">Водитель</label></div>
+            <input class="simpleInput" id="some" name='some'
+                   type='text' placeholder='Введите ФИО водителя...'>
+        </div>
+    </fieldset>
+    <div class='buttons w-100'>
         <button type="submit">создать</button>
     </div>
 </form>
@@ -340,22 +365,21 @@
     }
 
     /* selector type changer */
-    let isSelect = true;
-    let brigadeDoctor = document.querySelector('.brigadeDoctorField');
-    let additionalDoctor = document.querySelector('.additionalDoctor');
-    let buttons = document.querySelectorAll('.changeSelectorType');
+    let writableField = document.querySelectorAll('.writableField');
 
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', function () {
-            if (isSelect) {
-                brigadeDoctor.style.display = 'none';
-                additionalDoctor.style.display = 'flex';
-                isSelect = false;
-            } else {
-                brigadeDoctor.style.display = 'flex';
-                additionalDoctor.style.display = 'none';
-                isSelect = true;
-            }
+    for (let i = 0; i < writableField.length; i++) {
+        let writableTarget = document.querySelector(`.writableField.n${i + 1} + .writableTarget`);
+        let buttonToText = writableField[i].querySelector('.changeSelectorType');
+        let buttonToSelector = writableTarget.querySelector('.changeSelectorType');
+
+        buttonToText.addEventListener('click', function () {
+            writableField[i].style.display = 'none';
+            writableTarget.style.display = 'flex';
+        });
+
+        buttonToSelector.addEventListener('click', function () {
+            writableField[i].style.display = 'flex';
+            writableTarget.style.display = 'none';
         });
     }
 </script>
