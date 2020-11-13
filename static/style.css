@@ -74,7 +74,7 @@ fieldset {
     background: #fffbf4;
 }
 
-fieldset .field:last-child {
+fieldset > .field:last-child {
     margin-bottom: 0;
 }
 

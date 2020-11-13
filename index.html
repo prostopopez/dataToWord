@@ -252,20 +252,22 @@
     </fieldset>
     <fieldset>
         <legend>Бригада</legend>
-        <div class="field writableField n1">
-            <div class="label"><label for="brigadeDoctor">Врач бригады</label></div>
-            <select class="simpleInput selectInput" id="brigadeDoctor" name="brigadeDoctor">
-                <option value='gulyaevDN'>Гуляев Д.Н.</option>
-                <option value='tretyakovPV'>Третьяков П.В.</option>
-                <option value='krutskikhLV'>Крутских Л.В.</option>
-            </select>
-            <button class="changeSelectorType" type="button">+</button>
-        </div>
-        <div class="field writableTarget">
-            <div class="label"><label for="additionalDoctor">Врач бригады</label></div>
-            <input class="simpleInput" id="additionalDoctor" name='additionalDoctor'
-                   type='text' placeholder='Введите ФИО доктора...'>
-            <button class="changeSelectorType" type="button">-</button>
+        <div class="selectToTextContainer">
+            <div class="field writableField">
+                <div class="label"><label for="brigadeDoctor">Врач бригады</label></div>
+                <select class="simpleInput selectInput" id="brigadeDoctor" name="brigadeDoctor">
+                    <option value='gulyaevDN'>Гуляев Д.Н.</option>
+                    <option value='tretyakovPV'>Третьяков П.В.</option>
+                    <option value='krutskikhLV'>Крутских Л.В.</option>
+                </select>
+                <button class="changeSelectorType" type="button">+</button>
+            </div>
+            <div class="field writableTarget">
+                <div class="label"><label for="additionalDoctor">Врач бригады</label></div>
+                <input class="simpleInput" id="additionalDoctor" name='additionalDoctor'
+                       type='text' placeholder='Введите ФИО доктора...'>
+                <button class="changeSelectorType" type="button">-</button>
+            </div>
         </div>
         <div class="field">
             <div class="label"><label for="paramedicInBrigade">Фельдшер</label></div>
@@ -308,24 +310,26 @@
                     oninput='this.style.height = "auto"; this.style.height = this.scrollHeight - 20 + "px"'></textarea>
         </div>
     </fieldset>
-    <fieldset>
+    <fieldset class="w-100">
         <legend>ОБЪЕКТИВНЫЕ ДАННЫЕ:</legend>
-        <div class="field writableField n2">
-            <div class="label"><label for="patientCondition">СОСТОЯНИЕ</label></div>
-            <select class="simpleInput selectInput" id="patientCondition" name="patientCondition">
-                <option value='okState'>относительно удовлетворительное</option>
-                <option value='midState'>средней тяжести</option>
-                <option value='heavyState'>тяжёлое</option>
-                <option value='extremeState'>крайне тяжёлое</option>
-                <option value='terminalState'>терминальное</option>
-            </select>
-            <button class="changeSelectorType" type="button">+</button>
-        </div>
-        <div class="field writableTarget">
-            <div class="label"><label for="additionalCondition">СОСТОЯНИЕ</label></div>
-            <input class="simpleInput" id="additionalCondition" name='additionalCondition'
-                   type='text' placeholder='Введите состояние...'>
-            <button class="changeSelectorType" type="button">-</button>
+        <div class="selectToTextContainer">
+            <div class="field writableField">
+                <div class="label"><label for="patientCondition">СОСТОЯНИЕ</label></div>
+                <select class="simpleInput selectInput" id="patientCondition" name="patientCondition">
+                    <option value='okState'>относительно удовлетворительное</option>
+                    <option value='midState'>средней тяжести</option>
+                    <option value='heavyState'>тяжёлое</option>
+                    <option value='extremeState'>крайне тяжёлое</option>
+                    <option value='terminalState'>терминальное</option>
+                </select>
+                <button class="changeSelectorType" type="button">+</button>
+            </div>
+            <div class="field writableTarget">
+                <div class="label"><label for="additionalCondition">СОСТОЯНИЕ</label></div>
+                <input class="simpleInput" id="additionalCondition" name='additionalCondition'
+                       type='text' placeholder='Введите состояние...'>
+                <button class="changeSelectorType" type="button">-</button>
+            </div>
         </div>
         <div class="field">
             <div class="label"><label for="some">Водитель</label></div>
@@ -365,20 +369,22 @@
     }
 
     /* selector type changer */
-    let writableField = document.querySelectorAll('.writableField');
+    let selectToTextContainer = document.querySelectorAll('.selectToTextContainer');
 
-    for (let i = 0; i < writableField.length; i++) {
-        let writableTarget = document.querySelector(`.writableField.n${i + 1} + .writableTarget`);
-        let buttonToText = writableField[i].querySelector('.changeSelectorType');
+    for (let i = 0; i < selectToTextContainer.length; i++) {
+        let writableField = selectToTextContainer[i].querySelector(`.writableField`);
+        let buttonToText = writableField.querySelector('.changeSelectorType');
+        let writableTarget = selectToTextContainer[i].querySelector(`.writableTarget`);
         let buttonToSelector = writableTarget.querySelector('.changeSelectorType');
 
+        console.log(buttonToText, buttonToSelector);
         buttonToText.addEventListener('click', function () {
-            writableField[i].style.display = 'none';
+            writableField.style.display = 'none';
             writableTarget.style.display = 'flex';
         });
 
         buttonToSelector.addEventListener('click', function () {
-            writableField[i].style.display = 'flex';
+            writableField.style.display = 'flex';
             writableTarget.style.display = 'none';
         });
     }
