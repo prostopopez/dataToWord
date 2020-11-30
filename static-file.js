@@ -176,8 +176,8 @@ app.post('/finalData', parseData, (req, res) => {
                 }
             },
             {
-                val: `${isChecked(callType === 'primaryCall').val}`,
-                opts: `${isChecked(callType === 'primaryCall').opt}`
+                val: `${isChecked(callType === 'primary').val}`,
+                opts: `${isChecked(callType === 'primary').opt}`
             },
             {
                 val: `первичный`,
@@ -187,8 +187,8 @@ app.post('/finalData', parseData, (req, res) => {
                 }
             },
             {
-                val: `${isChecked(callType === 'repeatedCall').val}`,
-                opts: `${isChecked(callType === 'repeatedCall').opt}`
+                val: `${isChecked(callType === 'repeated').val}`,
+                opts: `${isChecked(callType === 'repeated').opt}`
             },
             {
                 val: `повторный`,
@@ -198,8 +198,8 @@ app.post('/finalData', parseData, (req, res) => {
                 }
             },
             {
-                val: `${isChecked(callType === 'passingCall').val}`,
-                opts: `${isChecked(callType === 'passingCall').opt}`
+                val: `${isChecked(callType === 'passing').val}`,
+                opts: `${isChecked(callType === 'passing').opt}`
             },
             {
                 val: `попутный`,
@@ -209,8 +209,8 @@ app.post('/finalData', parseData, (req, res) => {
                 }
             },
             {
-                val: `${isChecked(callType === 'anotherBrigadeCall').val}`,
-                opts: `${isChecked(callType === 'anotherBrigadeCall').opt}`
+                val: `${isChecked(callType === 'anotherBrigade').val}`,
+                opts: `${isChecked(callType === 'anotherBrigade').opt}`
             },
             {
                 val: `вызов другой бригады`,
@@ -220,8 +220,8 @@ app.post('/finalData', parseData, (req, res) => {
                 }
             },
             {
-                val: `${isChecked(callType === 'otherCall').val}`,
-                opts: `${isChecked(callType === 'otherCall').opt}`
+                val: `${isChecked(callType === 'other').val}`,
+                opts: `${isChecked(callType === 'other').opt}`
             },
             {
                 val: `прочее`,
@@ -253,8 +253,8 @@ app.post('/finalData', parseData, (req, res) => {
                 }
             },
             {
-                val: `${isChecked(callCause === 'onSiteConsultCause').val}`,
-                opts: `${isChecked(callCause === 'onSiteConsultCause').opt}`
+                val: `${isChecked(callCause === 'onSiteConsult').val}`,
+                opts: `${isChecked(callCause === 'onSiteConsult').opt}`
             },
             {
                 val: `консультация на месте`,
@@ -264,8 +264,8 @@ app.post('/finalData', parseData, (req, res) => {
                 }
             },
             {
-                val: `${isChecked(callCause === 'evacuationCause').val}`,
-                opts: `${isChecked(callCause === 'evacuationCause').opt}`
+                val: `${isChecked(callCause === 'evacuation').val}`,
+                opts: `${isChecked(callCause === 'evacuation').opt}`
             },
             {
                 val: `эвакуация`,
@@ -275,8 +275,8 @@ app.post('/finalData', parseData, (req, res) => {
                 }
             },
             {
-                val: `${isChecked(callCause === 'operationCause').val}`,
-                opts: `${isChecked(callCause === 'operationCause').opt}`
+                val: `${isChecked(callCause === 'operation').val}`,
+                opts: `${isChecked(callCause === 'operation').opt}`
             },
             {
                 val: `операция`,
@@ -286,8 +286,8 @@ app.post('/finalData', parseData, (req, res) => {
                 }
             },
             {
-                val: `${isChecked(callCause === 'otherCause').val}`,
-                opts: `${isChecked(callCause === 'otherCause').opt}`
+                val: `${isChecked(callCause === 'other').val}`,
+                opts: `${isChecked(callCause === 'other').opt}`
             },
             {
                 val: `прочее`,
