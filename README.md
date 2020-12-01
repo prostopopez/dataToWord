@@ -1,4 +1,4 @@
-# vkDataToExcel
+# dataToWord
 <p align="center">data to Word File with Node Example</p>
 
 ## Installation
@@ -8,11 +8,11 @@ $ yarn
 
 ## Script Usage
 ```bash
-# firstly, upload the html files of your messages to /vkData
+# just enter some data and you will get a Word Template
 
 # nodemon startup
 $ yarn server
 
 # script startup
-$ yarn script
+$ press on Sumbit button
 ```
