@@ -312,85 +312,120 @@
     </fieldset>
     <fieldset class="w-100">
         <legend>ОБЪЕКТИВНЫЕ ДАННЫЕ:</legend>
-        <div class="field">
-            <div class="label"><label for="condition">Состояние</label></div>
-            <select class="simpleInput selectInput" id="condition" name="condition">
-                <option value='ok'>относительно удовлетворительное</option>
-                <option value='mid'>средней тяжести</option>
-                <option value='hard'>тяжелое</option>
-                <option value='veryHard'>крайне тяжелое</option>
-            </select>
-        </div>
-        <div class="field">
-            <div class="label"><label for="skinCondition">Кожные покровы</label></div>
-            <select class="simpleInput selectInput" id="skinCondition" name="skinCondition">
-                <option value='fleshly'>телесного цвета</option>
-                <option value='pale'>бледные</option>
-                <option value='grayish'>с сероватым колоритом</option>
-                <option value='icteric'>суб/иктеричные</option>
-                <option value='hyperemic'>гиперемированные</option>
-                <option value='wet'>влажные</option>
-                <option value='dry'>сухие</option>
-                <option value='warm'>теплые</option>
-                <option value='cold'>холодные</option>
-                <option value='highTemp'>повышенной температуры</option>
-            </select>
-        </div>
-        <div class="field">
-            <div class="label"><label for="PZhS">Выраженность подкожно-жирового слоя</label></div>
-            <select class="simpleInput selectInput" id="PZhS" name="PZhS">
-                <option value='low'>слабо выражен</option>
-                <option value='mid'>норма</option>
-                <option value='high'>избыточен</option>
-            </select>
-        </div>
-        <div class="field columnFlex">
-            <h3 class="boldHead">Температура:</h3>
+        <div class="content">
             <div class="field">
-                <div class="label"><label for="axialTemperature">аксиальная</label></div>
-                <input class="simpleInput" id="axialTemperature" name='axialTemperature' type='number'
-                    placeholder='Ввведите аксиальную температуру...'>
+                <div class="label"><label for="condition">Состояние</label></div>
+                <select class="simpleInput selectInput" id="condition" name="condition">
+                    <option value='ok'>относительно удовлетворительное</option>
+                    <option value='mid'>средней тяжести</option>
+                    <option value='hard'>тяжелое</option>
+                    <option value='veryHard'>крайне тяжелое</option>
+                </select>
             </div>
             <div class="field">
-                <div class="label"><label for="peripheralTemperature">периферическая</label></div>
-                <input class="simpleInput" id="peripheralTemperature" name='peripheralTemperature' type='number'
-                    placeholder='Ввведите периферическую температуру...'>
+                <div class="label"><label for="skinCondition">Кожные покровы</label></div>
+                <select class="simpleInput selectInput" id="skinCondition" name="skinCondition">
+                    <option value='fleshly'>телесного цвета</option>
+                    <option value='pale'>бледные</option>
+                    <option value='grayish'>с сероватым колоритом</option>
+                    <option value='icteric'>суб/иктеричные</option>
+                    <option value='hyperemic'>гиперемированные</option>
+                    <option value='wet'>влажные</option>
+                    <option value='dry'>сухие</option>
+                    <option value='warm'>теплые</option>
+                    <option value='cold'>холодные</option>
+                    <option value='highTemp'>повышенной температуры</option>
+                </select>
             </div>
             <div class="field">
-                <div class="label"><label for="cavityTemperature">полостная</label></div>
-                <input class="simpleInput" id="cavityTemperature" name='cavityTemperature' type='number'
-                    placeholder='Ввведите полостную температуру...'>
+                <div class="label"><label for="PZhS">Выраженность подкожно-жирового слоя</label></div>
+                <select class="simpleInput selectInput" id="PZhS" name="PZhS">
+                    <option value='low'>слабо выражен</option>
+                    <option value='mid'>норма</option>
+                    <option value='high'>избыточен</option>
+                </select>
             </div>
-        </div>
-        <div class="field">
-            <div class="label"><label for="mucousMembrane">Слизистые</label></div>
-            <select class="simpleInput selectInput" id="mucousMembrane" name="mucousMembrane">
-                <option value='pink'>розовые</option>
-                <option value='pale'>бледные</option>
-                <option value='icteric'>суб/иктеричные</option>
-                <option value='cyanotic'>цианотичные</option>
-            </select>
-        </div>
-        <div class="rowFlex radioFlex">
-            <h3>Периферические расстройства:</h3>
-            <div class="field">
-                <div class="label"><label for="isPD">есть</label></div>
-                <input class="radioInput" id="isPD" name='peripheralDisorders' value="isPD" type='radio'>
-            </div>
-            <div class="field">
-                <div class="label"><label for="notPD">нет</label></div>
-                <input class="radioInput" id="notPD" name='peripheralDisorders' value="notPD" type='radio'>
-            </div>
-        </div>
-        <div class="rowFlex radioFlex">
-            <h3>Цианоз:</h3>
-            <div class="field">
-                <div class="label"><label for="isCyanosis">есть</label></div>
-                <input class="radioInput" id="isCyanosis" name='cyanosis' value="isCyanosis" type='radio'>
+            <div class="field columnFlex">
+                <h3 class="boldHead">Температура:</h3>
+                <div class="field">
+                    <div class="label"><label for="axialTemperature">аксиальная</label></div>
+                    <input class="simpleInput" id="axialTemperature" name='axialTemperature' type='number'
+                        placeholder='Ввведите аксиальную температуру...'>
+                </div>
+                <div class="field">
+                    <div class="label"><label for="peripheralTemperature">периферическая</label></div>
+                    <input class="simpleInput" id="peripheralTemperature" name='peripheralTemperature' type='number'
+                        placeholder='Ввведите периферическую температуру...'>
+                </div>
+                <div class="field">
+                    <div class="label"><label for="cavityTemperature">полостная</label></div>
+                    <input class="simpleInput" id="cavityTemperature" name='cavityTemperature' type='number'
+                        placeholder='Ввведите полостную температуру...'>
+                </div>
             </div>
             <div class="field">
-                <div class="label"><label for="notCyanosis">нет</label></div>
-                <input class="radioInput" id="notCyanosis" name='cyanosis' value="notCyanosis" type='radio'>
+                <div class="label"><label for="mucousMembrane">Слизистые</label></div>
+                <select class="simpleInput selectInput" id="mucousMembrane" name="mucousMembrane">
+                    <option value='pink'>розовые</option>
+                    <option value='pale'>бледные</option>
+                    <option value='icteric'>суб/иктеричные</option>
+                    <option value='cyanotic'>цианотичные</option>
+                </select>
+            </div>
+            <div class="rowFlex radioFlex">
+                <h3>Периферические расстройства:</h3>
+                <div class="field">
+                    <div class="label"><label for="isPD">есть</label></div>
+                    <input class="radioInput" id="isPD" name='peripheralDisorders' value="isPD" type='radio'>
+                </div>
+                <div class="field">
+                    <div class="label"><label for="notPD">нет</label></div>
+                    <input class="radioInput" id="notPD" name='peripheralDisorders' value="notPD" type='radio'>
+                </div>
+            </div>
+            <div class="rowFlex radioFlex">
+                <h3>Цианоз:</h3>
+                <div class="field">
+                    <div class="label"><label for="isCyanosis">есть</label></div>
+                    <input class="radioInput" id="isCyanosis" name='cyanosis' value="isCyanosis" type='radio'>
+                </div>
+                <div class="field">
+                    <div class="label"><label for="notCyanosis">нет</label></div>
+                    <input class="radioInput" id="notCyanosis" name='cyanosis' value="notCyanosis" type='radio'>
+                </div>
+            </div>
+            <div class="rowFlex radioFlex">
+                <h3>Акроцианоз:</h3>
+                <div class="field">
+                    <div class="label"><label for="isAcroCyanosis">есть</label></div>
+                    <input class="radioInput" id="isAcroCyanosis" name='acrocyanosis' value="isAcroCyanosis" type='radio'>
+                </div>
+                <div class="field">
+                    <div class="label"><label for="notAcroCyanosis">нет</label></div>
+                    <input class="radioInput" id="notAcroCyanosis" name='acrocyanosis' value="notAcroCyanosis" type='radio'>
+                </div>
+            </div>
+            <div class="rowFlex radioFlex">
+                <h3>Мраморность:</h3>
+                <div class="field">
+                    <div class="label"><label for="isMarbling">есть</label></div>
+                    <input class="radioInput" id="isMarbling" name='marbling' value="isMarbling" type='radio'>
+                </div>
+                <div class="field">
+                    <div class="label"><label for="notMarbling">нет</label></div>
+                    <input class="radioInput" id="notMarbling" name='marbling' value="notMarbling" type='radio'>
+                </div>
+            </div>
+            <div class="rowFlex radioFlex">
+                <h3>Пастозность:</h3>
+                <div class="field">
+                    <div class="label"><label for="isPastiness">есть</label></div>
+                    <input class="radioInput" id="isPastiness" name='pastiness' value="isPastiness" type='radio'>
+                </div>
+                <div class="field">
+                    <div class="label"><label for="notPastiness">нет</label></div>
+                    <input class="radioInput" id="notPastiness" name='pastiness' value="notPastiness" type='radio'>
+                </div>
             </div>
         </div>
     </fieldset>
