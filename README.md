@@ -1,4 +1,4 @@
-# vkDataToExcel
+# dataToWord
 <p align="center">data to Word File with Node Example</p>
 
 ## Installation
